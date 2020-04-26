@@ -1,29 +1,40 @@
+
 <?php
-	session_start();
-	if(isset($_SESSION['login'])){
-	header("location:dashboard.php");
+require("header.php");
+session_start();
+
+if(isset($_SESSION['user'])){
+	header("location:auth/dashboard.php");
 }
 else {
 	if(isset($_COOKIE['user'])){
-	header("location:dashboard.php");	
+	header("location:auth/dashboard.php");	
 }
 else {
-	echo "<center><h1>Usuario no logueado pc2</h1></center>";
+	echo '<div class="ed-container s-1-3"> <div class="ed-item s-1-2"><h2>Sing in</h2></div></div>';
 }
 }
 ?>
-<html>
-	<head>
-	<title>Login</title>
-	</head>
-	<body>
-<center>
-	<form method="post" action="session.php">
-		User: <input type="text" name="user" required/> <br>
-		Password: <input type="password" name="password" required/>
-		<br>
-		<input type="submit" name="submit">
-</form>
-</center>
-	</body>
-</html>
+
+
+	<form  class="ed-container s-1-3" method="post" action="auth/authenticate.php">
+		<div class="ed-container">
+		<div class="ed-item s-1-2"><label>User</label></div>
+		<div class="ed-item s-1-2"><input type="text" name="user" required/> </div>
+		</div>
+		<div class="ed-container">
+		<div class="ed-item s-1-2">
+		<label>Password:</label>
+		</div>
+		<div class="ed-item s-1-2">
+		<input type="password" name="password" required/>
+		</div>
+		</div>
+		<div class="ed-item">
+		  <button class="btn waves-effect waves-light" type="submit" name="action">Iniciar Session</button>
+		</div>
+	</form>
+
+<?php
+require("footer.php");
+?>
