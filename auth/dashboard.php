@@ -3,15 +3,18 @@ include "../header.php";
 include "sessioncookie.php";
 session_start();
 
-if(!isset($_COOKIE['user'])){
-	unset($_SESSION['user']);
-	unset($_SESSION['password']);
-	unset($_SESSION['config']);
+if(!isset($_COOKIE['user'])  || !isset($_COOKIE['password'])){
+//unset($_COOKIE['user']);
+//unset($_COOKIE['password']);
+//setcookie("user",null,-1);
+//setcookie('password',null,-1);
+unset($_SESSION['user']);
+unset($_SESSION['password']);
+unset($_SESSION['config']);
 
 }
 
-if(isset($_SESSION['user'])){
-
+if(isset($_SESSION['user']) && isset($_SESSION['password'])){
  	$ldapconn = ldap_connect($_SESSION['config']['urlLdap']) or die("Could not connect to LDAP server.");
 	 $search = ldap_search($ldapconn, $_SESSION['config']['baseSearch'],"uid=*") or die("Error in search query: " . ldap_error($ldapconn));
 
@@ -58,7 +61,7 @@ if(isset($_SESSION['user'])){
 }
 else {
 	sessioncookie();
-	header("location:dashboard.php");
+	//header("location:dashboard.php");
 }
 ?>
 

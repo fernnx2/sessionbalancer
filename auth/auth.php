@@ -34,4 +34,5 @@ die("<h2>Error authenticate  :".ldap_error($ldapconn)."</h2>"."</br> <a class='b
 }
 }
 
+
 ?>

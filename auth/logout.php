@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 unset($_COOKIE['user']);
 unset($_COOKIE['password']);
@@ -7,7 +8,11 @@ setcookie('password',null,-1);
 unset($_SESSION['user']);
 unset($_SESSION['password']);
 unset($_SESSION['config']);
-echo "Session Cerrada";
-header("location: ../index.php");
+
+echo "Session Cerrada."
 ?>
-<a href="../index.php">Volver al login</a>
+<div class="ed-container">
+        <div class="ed-item"><a href="../index.php">Volver al Login</a></div>
+</div>
+
+
