@@ -21,7 +21,7 @@ unset($_SESSION['config']);
 
 ?>
 
-	<div class="ed-container s-1-3"> <div class="ed-item s-1-2"><h2>Sing in</h2></div></div>
+	<div class="ed-container s-1-3"> <div class="ed-item s-1-2"><h2>Sign in</h2></div></div>
 
 	<form  class="ed-container s-1-3" method="post" action="auth/authenticate.php">
 		<div class="ed-container">
