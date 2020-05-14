@@ -1,8 +1,6 @@
 
 <?php
 require("header.php");
-session_start();
-
 if(isset($_COOKIE['user']) && isset($_COOKIE['password'])){
         header("location:auth/dashboard.php");
 }
