@@ -17,19 +17,13 @@ if(isset($_SESSION['user']) && isset($_SESSION['password'])){
 ?>
 	
 	<div class="ed-container">
-                <table>
-                        <thead>
-                                <tr>
-					<th>UID</th>
-					<th>Nombre CN</th>
-					<th>Apellido SN</th>
-					<th>Actions</th>
-				</tr> 
-                        </thead> 
-                        <tbody>
-                </tbody>
-                </table>
-                </div>
+		<div class="ed-item s-1-5">
+			<h3>Usuario Logueado</h3>
+		</div>
+		<div class="ed-item s-1-5">
+			<h2><?php echo $_SESSION['user']; ?></h2>
+		</div>
+	</div>
 
 
 <?php
@@ -39,7 +33,6 @@ else {
 	//header("location:dashboard.php");
 }
 ?>
-	<h1>Usuario Logueado</h1>
 <center><a class="btn waves-effect waves-light s-100 orange" href="logout.php">Logout</a></center>
 
 <?php
