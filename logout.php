@@ -1,5 +1,6 @@
 <?php
 
+include "header.php";
 session_start();
 unset($_COOKIE['user']);
 unset($_COOKIE['password']);
@@ -15,4 +16,7 @@ echo "Session Cerrada."
         <div class="ed-item"><a href="index.php">Volver al Login</a></div>
 </div>
 
+<?php
+include "footer.php";
+?>
 
